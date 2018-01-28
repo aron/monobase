@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as cookies from "js-cookie";
 import { Dynamic } from "monobase";
-import { pill } from "components/theme";
+import { boxStyle } from "./Box";
 
 const CookieKey = "CookieComponentValue";
 
@@ -25,10 +25,11 @@ class Cookie extends React.Component<{}, { value: string }> {
         placeholder="Type something…"
         onChange={this.onChange}
         style={{
-          ...pill,
-          width: "100%",
+          ...boxStyle,
+          width: 300,
           textAlign: "center",
-          border: "1px solid #EEE"
+          outline: 0,
+          border: "none"
         }}
       />
     );

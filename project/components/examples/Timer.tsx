@@ -1,12 +1,6 @@
 import * as React from "react";
 import { Dynamic } from "monobase";
-import { pill } from "components/theme";
-
-const style = {
-  ...pill,
-  border: "1px solid #F0F0F0",
-  fontFamily: "monospace"
-};
+import Box from "./Box";
 
 class Timer extends React.Component<{}, { time: number }> {
   state = { time: 0 };
@@ -20,7 +14,7 @@ class Timer extends React.Component<{}, { time: number }> {
   };
 
   render() {
-    return <button style={style}>{this.state.time}</button>;
+    return <Box style={{ fontFamily: "monospace" }}>{this.state.time}</Box>;
   }
 }
 

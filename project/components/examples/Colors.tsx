@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Dynamic } from "monobase";
-import { pill } from "components/theme";
+import { Size, Scale, fontSize } from "components/theme";
+import Box, { boxStyle } from "./Box";
 
 class Colors extends React.Component<{}, { color: string }> {
   state = { color: "" };
@@ -11,30 +12,35 @@ class Colors extends React.Component<{}, { color: string }> {
 
   render() {
     return (
-      <div style={{ width: 300, margin: "auto" }}>
+      <Box
+        strip
+        style={{
+          overflow: "hidden"
+        }}
+      >
         <div
           style={{
-            height: 300,
-            borderRadius: "8px 8px 0 0",
+            ...Size(300),
             transition: "background-color .2s",
-            backgroundColor: this.state.color ? this.state.color : "#EEE"
+            background: this.state.color ? this.state.color : "#EEE"
           }}
         />
         <input
           type="text"
           value={this.state.color}
-          placeholder="like 'darksalmon'"
+          placeholder="e.g. orange"
           onChange={this.updateInput}
           style={{
-            ...pill,
             width: "100%",
-            borderTop: "none",
+            padding: `${Scale.s} 0`,
+            fontSize: fontSize.s,
             textAlign: "center",
-            border: "1px solid #EEE",
-            borderRadius: "0 0 8px 8px"
+            background: "none",
+            border: "none",
+            outline: 0
           }}
         />
-      </div>
+      </Box>
     );
   }
 }

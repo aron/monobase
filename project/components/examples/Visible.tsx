@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Dynamic } from "monobase";
-import { pill } from "components/theme";
 import { ReactNode } from "react";
 
 class Visible extends React.Component<

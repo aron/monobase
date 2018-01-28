@@ -1,10 +1,11 @@
 import * as React from "react";
 import { Dynamic } from "monobase";
-import { pill } from "components/theme";
+import { Color, Scale } from "components/theme";
+import { boxStyle } from "./Box";
 
 const style: React.CSSProperties = {
-  ...pill,
-  background: "#0AF",
+  border: "none",
+  background: Color.blue,
   color: "#fff"
 };
 
@@ -23,7 +24,7 @@ class Button extends React.Component<{}, { count: number }> {
 
   render() {
     return (
-      <button style={style} onClick={this.onClick}>
+      <button style={{ ...boxStyle, ...style }}>
         Count: {this.state.count}
       </button>
     );

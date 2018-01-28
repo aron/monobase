@@ -1,15 +1,8 @@
 import * as React from "react";
 import { Dynamic } from "monobase";
-import { pill } from "components/theme";
+import Box from "./Box";
 
 declare var document;
-
-const style: React.CSSProperties = {
-  ...pill,
-  fontFamily: "monospace",
-  background: "white",
-  border: "1px solid #F0F0F0"
-};
 
 class Mouse extends React.Component {
   point = { x: 0, y: 0 };
@@ -25,9 +18,9 @@ class Mouse extends React.Component {
 
   render() {
     return (
-      <button style={style}>
+      <Box style={{ fontFamily: "monospace" }}>
         {this.point.x}, {this.point.y}
-      </button>
+      </Box>
     );
   }
 }
